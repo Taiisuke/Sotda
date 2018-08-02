@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbContenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #285b8f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sotda.controlador.principal.FXMLDocumentController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="422.0" spacing="80.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/halcon_png.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgMiniLogo" fitHeight="89.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo-utez.png" />
+               </image>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="77.0" prefWidth="600.0">
+         <children>
+            <Label text="Iniciar Sesión" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB" size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="211.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="219.0" prefWidth="311.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Usuario" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="80.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Contraseña" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtUsuario" GridPane.columnIndex="1" />
+                  <Label text="¿No estás registrado?" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Hyperlink fx:id="lkRegistrate" onAction="#registroo" text="Regístrate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <PasswordField fx:id="txtContra" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btIniciarSesion" mnemonicParsing="false" onAction="#inicio" style="-fx-background-color: linear-gradient(#009475, #00B553),        linear-gradient(#00D160, #009475),        linear-gradient(#00D160, #009461),        linear-gradient(#00d160 0%, #009461 50%, #009475 100%),linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Iniciar Sesión" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbContenedor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #285b8f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sotda.control.alumno.TalleresInsController">
+   <children>
+      <BorderPane prefHeight="631.0" prefWidth="600.0">
+         <top>
+            <HBox prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="42.0" prefWidth="600.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="112.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="112.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="53.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#inicio" prefHeight="46.0" prefWidth="113.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Inicio" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCerrarSesion" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="46.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Cerrar Sesión" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnTalleres" mnemonicParsing="false" onAction="#talleres" prefHeight="46.0" prefWidth="112.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Talleres Cursados" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnPerfil" mnemonicParsing="false" onAction="#perfil" prefHeight="46.0" prefWidth="112.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Perfil" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <HBox alignment="CENTER" prefHeight="528.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <GridPane prefHeight="521.0" prefWidth="491.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="386.0" minHeight="10.0" prefHeight="378.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="386.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TableView prefHeight="100.0" prefWidth="491.0" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn prefWidth="164.0" text="Nombre del taller" />
+                              <TableColumn prefWidth="79.0" text="Grupo" />
+                              <TableColumn prefWidth="85.0" text="Docente" />
+                              <TableColumn prefWidth="87.0" text="Horario" />
+                              <TableColumn prefWidth="75.0" text="Estado" />
+                           </columns>
+                        </TableView>
+                        <Label text="Talleres Cursados" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="190.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnDescargar" mnemonicParsing="false" onAction="#descargar" style="-fx-background-color: linear-gradient(#1b305d, #4f7fe7),        linear-gradient(#4f7fe7, #4f7fe7)         linear-gradient(#1b305d, #1b305d),        linear-gradient(#1b305d 0%, #3b5999 50%, #1b305d 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));;" text="Descargar Historial" textFill="WHITE" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="194.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </center>
+         <bottom>
+            <HBox prefHeight="1.0" prefWidth="600.0" BorderPane.alignment="BOTTOM_CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>

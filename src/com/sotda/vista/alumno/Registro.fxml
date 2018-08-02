@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbContenedor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #285b8f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sotda.control.alumno.ControladorRegistro">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="175.0" prefWidth="422.0" spacing="80.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/halcon_png.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgMiniLogo" fitHeight="89.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/logo-utez.png" />
+               </image>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="400.0">
+         <children>
+            <Label prefHeight="33.0" prefWidth="213.0" text="      Registro" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="258.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="57.0" prefWidth="259.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nombre" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" prefHeight="25.0" prefWidth="138.0" GridPane.columnIndex="1" />
+                  <Label text="Matricula" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="14.0" prefWidth="55.0" text="Carrera" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="14.0" prefWidth="68.0" text="Grupo" textFill="WHITE" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="27.0" prefWidth="102.0" text="Cuatrimestre" textFill="WHITE" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Contraseña" textFill="WHITE" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtContraseña" prefHeight="25.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Confirmar Contraseña" textFill="WHITE" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtConfirmar" prefHeight="25.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="txtMatricula" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtCarrera" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtGrupo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtCuatrimestre" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Apellido Paterno" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Apellido Materno" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtap1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtap2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="registro" alignment="CENTER" mnemonicParsing="false" onAction="#registro" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(#009475, #00B553),        linear-gradient(#00D160, #009475),        linear-gradient(#00D160, #009461),        linear-gradient(#00d160 0%, #009461 50%, #009475 100%),linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-insets: 0,1,2,3,0; -fx-background-radius: 5;" text="Registrate" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </children>
+</VBox>
