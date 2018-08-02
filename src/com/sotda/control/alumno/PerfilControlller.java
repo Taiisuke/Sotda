@@ -74,7 +74,8 @@ public class PerfilControlller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-//        consultarDatos();
+
+       consultarDatos();
     }
 
     @FXML
