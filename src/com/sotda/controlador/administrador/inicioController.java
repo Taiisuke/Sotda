@@ -6,6 +6,8 @@
 package com.sotda.controlador.administrador;
 
 import com.sotda.controlador.principal.FXMLDocumentController;
+import com.sotda.modelo.talleres.BeanConsultaTalleres;
+import com.sotda.modelo.talleres.DaoTalleres;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
@@ -46,17 +49,16 @@ public class inicioController implements Initializable {
     @FXML
     private Button btnModificar;
     @FXML
-    private TableView<?> tablaTaller;
+    private TableView<BeanConsultaTalleres> tablaTaller;
     @FXML
-    private TableColumn<?, ?> colNombreTaller;
+    private TableColumn<BeanConsultaTalleres, String> colNombreTaller;
     @FXML
-    private TableColumn<?, ?> ColCupoMax;
+    private TableColumn<BeanConsultaTalleres, String> ColCupoMax;
     @FXML
-    private TableColumn<?, ?> colNombreDocente;
+    private TableColumn<BeanConsultaTalleres, String> colNombreDocente;
     @FXML
-    private TableColumn<?, ?> colEspacio;
-    @FXML
-    private TableColumn<?, ?> colEstado;
+    private TableColumn<BeanConsultaTalleres, String> colEspacio;
+  
     @FXML
     private TableView<?> tablaGrupo;
     @FXML
@@ -73,6 +75,10 @@ public class inicioController implements Initializable {
     private Button btnPeriodos;
     @FXML
     private Button btnSesion;
+    @FXML
+    private TableColumn<BeanConsultaTalleres, Integer> colEstadoTaller;
+    @FXML
+    private TableColumn<?, ?> colEstadoGrupo;
 
     /**
      * Initializes the controller class.
@@ -83,11 +89,22 @@ public class inicioController implements Initializable {
         btnEliminar.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnConsultarGrupo.setGraphic(new ImageView("/com/sotda/imagenes/consultar.png"));
         btnAltaTaller.setGraphic(new ImageView("/com/sotda/imagenes/crear.png"));   
+        colNombreTaller.setCellValueFactory(new PropertyValueFactory <>("nombreTaller"));
+        ColCupoMax.setCellValueFactory(new PropertyValueFactory <>("cupoMaximo"));
+        colNombreDocente.setCellValueFactory(new PropertyValueFactory <>("nombreDocente"));
+        colEspacio.setCellValueFactory(new PropertyValueFactory <>("espacioAsignado"));
+        colEstadoTaller.setCellValueFactory(new PropertyValueFactory <>("tallerEstado"));
+        consultaDatos();
         
-        // TODO
+// TODO
     }
 
- 
+ public void consultaDatos(){
+     DaoTalleres dao=new DaoTalleres();
+     tablaTaller.getItems().clear();
+     tablaTaller.getItems().addAll(dao.consultaTalleres());
+
+ }
 
     @FXML
     private void altaTaller(ActionEvent event) { 

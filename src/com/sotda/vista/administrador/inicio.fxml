@@ -50,7 +50,7 @@
                             <TableColumn fx:id="ColCupoMax" prefWidth="101.0" text="Cupo Máximo" />
                               <TableColumn fx:id="colNombreDocente" prefWidth="121.0" text="Nombre de docente" />
                               <TableColumn fx:id="colEspacio" minWidth="0.0" prefWidth="117.0" text="Espacio asignado" />
-                              <TableColumn fx:id="colEstado" maxWidth="100.0" minWidth="5.0" prefWidth="69.0" text="Estado" />
+                              <TableColumn fx:id="colEstadoTaller" maxWidth="100.0" minWidth="5.0" prefWidth="69.0" text="Estado" />
                           </columns>
                         </TableView>
                      </content>
@@ -72,7 +72,7 @@
                             <TableColumn fx:id="colNumGrupo" prefWidth="105.0" text="# de Grupo" />
                             <TableColumn fx:id="colHorario" prefWidth="108.0" text="Horarios" />
                               <TableColumn fx:id="colNumero" prefWidth="128.0" text="Numero de Alumnos" />
-                              <TableColumn fx:id="colEstado" prefWidth="118.0" text="Estado" />
+                              <TableColumn fx:id="colEstadoGrupo" prefWidth="118.0" text="Estado" />
                           </columns>
                         </TableView>
                      </children>
