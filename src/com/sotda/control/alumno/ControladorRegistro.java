@@ -60,6 +60,8 @@ public class ControladorRegistro implements Initializable {
     private TextField txtap2;
     @FXML
     private ComboBox<?> comboCarrera;
+    @FXML
+    private Button cancelar;
 
     /**
      * Initializes the controller class.
@@ -106,6 +108,10 @@ public class ControladorRegistro implements Initializable {
                 alert1.show();
             }
         }
+
+    @FXML
+    private void cancelar(ActionEvent event) {
+    }
         
     
     }
