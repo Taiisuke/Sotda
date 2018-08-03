@@ -30,7 +30,6 @@ public class ConexionSQL {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=SOTDAV2;user=sa;password=root";
             con = DriverManager.getConnection(connectionUrl);
-            System.out.println("Conectado.");
         } catch (Exception ex) {
             System.out.println("Error." + ex);
         }
