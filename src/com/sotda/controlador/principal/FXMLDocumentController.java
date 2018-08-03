@@ -19,17 +19,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -53,6 +49,8 @@ public class FXMLDocumentController implements Initializable {
     public static BeanUsuario user = null;
 //    public static BeanAlumno beanAlum = null;
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    @FXML
+    private ImageView imgMiniLogo;
 
     /**
      * Initializes the controller class.
@@ -64,15 +62,11 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    private void registroo(ActionEvent event) throws IOException {
+    private void registroo(ActionEvent event) {
         Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/alumno/Registro.fxml"));
             vbContenedor.getChildren().remove(0);
-            vbContenedor.getChildren().remove(0);
-            vbContenedor.getChildren().remove(0);
-            vbContenedor.getChildren().remove(0);
-            
 
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,9 +81,8 @@ public class FXMLDocumentController implements Initializable {
     private void inicio(ActionEvent event) {
         DaoUsuario dao = new DaoUsuario();
         user = dao.validarUsuario(txtUsuario.getText(), txtContra.getText());
-        if (dao.resultado == true) {
-            int usuario = user.getTipo();
-            switch (usuario) {
+        if (dao.resultado) {
+            switch (user.getTipo()) {
                 case 1:
                     Parent paren = null;
                     try {
