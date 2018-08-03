@@ -141,7 +141,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="112.0" prefWidth="371.0" spacing="100.0">
                      <children>
-                        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrar" prefHeight="22.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(#DB4E1B, #ffd65b),        linear-gradient(#f2ba44, #ffef84)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#EEAC0A 0%, #DB6310 50%, #DB4E1B 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));; -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Modificar" textFill="WHITE" wrapText="true">
+                        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#modificar" prefHeight="22.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(#DB4E1B, #ffd65b),        linear-gradient(#f2ba44, #ffef84)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#EEAC0A 0%, #DB6310 50%, #DB4E1B 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));; -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Modificar" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Berlin Sans FB" size="12.0" />
                            </font>
