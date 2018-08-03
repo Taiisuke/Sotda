@@ -5,18 +5,31 @@
  */
 package com.sotda.modelo.alumno;
 
+import com.sotda.modelo.usuario.BeanUsuario;
+
 /**
  *
  * @author Esmeralda
  */
-public class BeanAlumno {
+public class BeanAlumno extends BeanUsuario {
+
     private String matricula;
     private String nombreAlumno;
     private String primerApellido;
     private String segundoApellido;
     private int cuatrimestre;
     private String grupo;
-    private String carrera;
+    private int carrera;
+
+    public BeanAlumno(String matricula, String nombreAlumno, String primerApellido, String segundoApellido, int cuatrimestre, String grupo, int carrera) {
+        this.matricula = matricula;
+        this.nombreAlumno = nombreAlumno;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+        this.cuatrimestre = cuatrimestre;
+        this.grupo = grupo;
+        this.carrera = carrera;
+    }
 
     public String getMatricula() {
         return matricula;
@@ -66,13 +79,15 @@ public class BeanAlumno {
         this.grupo = grupo;
     }
 
-    public String getCarrera() {
+    public int getCarrera() {
         return carrera;
     }
 
-    public void setCarrera(String carrera) {
+    public void setCarrera(int carrera) {
         this.carrera = carrera;
     }
 
-    
+    public BeanAlumno() {
+    }
+
 }
