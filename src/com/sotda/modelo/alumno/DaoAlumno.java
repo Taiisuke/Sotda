@@ -72,7 +72,7 @@ public class DaoAlumno {
                 beanAlumno.setSegundoApellido(rs.getString("SEGUNDO_APELLIDO"));
                 beanAlumno.setCuatrimestre(rs.getInt("CUATRIMESTRE"));
                 beanAlumno.setGrupo(rs.getString("GRUPO"));
-                beanAlumno.setCarrera(rs.getString("CARRERA"));
+                beanAlumno.setCarrera(rs.getInt("CARRERA"));
 
                 lista.add(beanAlumno);
             }
