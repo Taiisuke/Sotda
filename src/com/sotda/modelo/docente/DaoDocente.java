@@ -10,6 +10,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,15 +56,16 @@ public class DaoDocente {
         BeanConsultarDocentes docente = null;
         try {
             con = ConexionSQL.getConnectionSQL();
-            ps = con.prepareStatement("select CONCAT(DOCENTE.NOMBRE,' ',PRIMER_APELLIDO,' ',SEGUNDO_APELLIDO)as nombreCompleto, TALLER.NOMBRE as nombreTaller,NOMBRE_ESPACIO as nombreEspacio, ESPACIO.ESTADO as estadoEspacio"
-                    + "from DOCENTE inner join TALLER on DOCENTE=NUM_EMPLEADO"
-                    + "	inner join ESPACIO on ESPACIO_ID=ESPACIO_ASIGNADO");
+            ps = con.prepareStatement("select docente.NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO, NOMBRETALLER, NOMBRE_ESPACIO, TALLER.ESTADO as estadoTaller"
+                    + "	FROM DOCENTE inner join TALLER on NUM_EMPLEADO = TALLER.DOCENTE"
+                    + "		inner join ESPACIO on ESPACIO_ID = TALLER.ESPACIO_ASIGNADO");
             rs = ps.executeQuery();
             while (rs.next()) {
-                System.out.println(rs.getString("nombreCompleto"));
-                System.out.println(rs.getString("nombreTaller"));
-                System.out.println(rs.getString("nombreEspacio"));
-                docente = new BeanConsultarDocentes(rs.getString("nombreCompleto"), rs.getString("NOMBRE"), rs.getString("NOMBRE_ESPACIO"), rs.getString("estadoEspacio"));
+                docente = new BeanConsultarDocentes();
+                docente.setNombre(rs.getString("NOMBRE")+ " " + rs.getString("PRIMER_APELLIDO")+" "+rs.getString("SEGUNDO_APELLIDO"));
+                docente.setTaller(rs.getString("NOMBRETALLER"));
+                docente.setEspacio(rs.getString("NOMBRE_ESPACIO"));
+                docente.setEstado(rs.getString("estadoTaller"));
                 docentes.add(docente);
             }
         } catch (Exception ex) {
@@ -73,7 +75,7 @@ public class DaoDocente {
                 con.close();
                 ps.close();
                 rs.close();
-            } catch (Exception ex) {
+            } catch (SQLException exe) {
 
             }
         }
