@@ -123,9 +123,14 @@
             </GridPane>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
             <Button fx:id="registro" alignment="CENTER" mnemonicParsing="false" onAction="#registro" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(#009475, #00B553),        linear-gradient(#00D160, #009475),        linear-gradient(#00D160, #009461),        linear-gradient(#00d160 0%, #009461 50%, #009475 100%),linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-insets: 0,1,2,3,0; -fx-background-radius: 5;" text="Registrate" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelar" alignment="CENTER" mnemonicParsing="false" onAction="#cancelar" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: linear-gradient(#cc0000, #ef4a4a),        linear-gradient(#ef4a4a, #f02e2e)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#f02e2e 0%, #f31616 50%, #cc0000 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-insets: 0,1,2,3,0; -fx-background-radius: 5;" text="Registrate" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="12.0" />
                </font>

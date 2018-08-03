@@ -38,10 +38,7 @@ public class DaoTalleres {
             pstm = con.prepareStatement("select taller.NOMBRE,CUPO_MAXIMO,DOCENTE.NOMBRE as nombreProf,espacio.nombre_espacio,taller.estado as tallerEstado from TALLER inner join ESPACIO on ESPACIO_ASIGNADO=ESPACIO_ID inner join DOCENTE on DOCENTE =NUM_EMPLEADO");
             rs = pstm.executeQuery();
             while (rs.next()) {
-                System.out.println(rs.getString("nombre"));
-                System.out.println(rs.getString("nombreProf"));
-                System.out.println(rs.getString("nombre_Espacio"));
-                System.out.println(rs.getInt("cupo_Maximo"));
+                
                 if(rs.getInt("tallerEstado")==1){
                     estado="Activo";
                 }else{

@@ -79,19 +79,7 @@ public class periodosController implements Initializable {
 
     @FXML
     private void inicio(ActionEvent event) {
-          Parent pare = null;
-        try {
-            pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/inicio.fxml"));
-            verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
-        }
-        verticalBox.getChildren().add(0, pare);
+        
     
     }
 
