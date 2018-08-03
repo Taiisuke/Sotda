@@ -38,7 +38,7 @@ public class DaoUsuario {
             cstm.setString(3, bean.getPrimerApellido());
             cstm.setString(4, bean.getSegundoApellido());
             cstm.setInt(5, bean.getCuatrimestre());
-//            cstm.setInt(6, bean.getCarrera());
+            cstm.setInt(6, bean.getCarrera());
             cstm.setString(7, bean.getGrupo());
             cstm.setString(8, contra);
             resultado = cstm.executeUpdate() > 0;
