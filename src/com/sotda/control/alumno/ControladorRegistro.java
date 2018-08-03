@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -42,8 +43,6 @@ public class ControladorRegistro implements Initializable {
     @FXML
     private TextField txtMatricula;
     @FXML
-    private TextField txtCarrera;
-    @FXML
     private TextField txtGrupo;
     @FXML
     private TextField txtCuatrimestre;
@@ -59,6 +58,8 @@ public class ControladorRegistro implements Initializable {
     private TextField txtap1;
     @FXML
     private TextField txtap2;
+    @FXML
+    private ComboBox<?> comboCarrera;
 
     /**
      * Initializes the controller class.
