@@ -7,11 +7,9 @@ package com.sotda.controlador.administrador;
 
 import com.sotda.controlador.principal.FXMLDocumentController;
 import com.sotda.modelo.docente.BeanConsultarDocentes;
-import com.sotda.modelo.docente.BeanDocente;
 import com.sotda.modelo.docente.DaoDocente;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
