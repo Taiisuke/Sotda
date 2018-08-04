@@ -79,6 +79,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void inicio(ActionEvent event) {
+        System.out.println(event);
         DaoUsuario dao = new DaoUsuario();
         user = dao.validarUsuario(txtUsuario.getText(), txtContra.getText());
         if (dao.resultado) {

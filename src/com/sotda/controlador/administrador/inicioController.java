@@ -82,84 +82,97 @@ public class inicioController implements Initializable {
         btnModificar.setGraphic(new ImageView("/com/sotda/imagenes/modificar.png"));
         btnEliminar.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnConsultarGrupo.setGraphic(new ImageView("/com/sotda/imagenes/consultar.png"));
-        btnAltaTaller.setGraphic(new ImageView("/com/sotda/imagenes/crear.png"));   
-        
+        btnAltaTaller.setGraphic(new ImageView("/com/sotda/imagenes/crear.png"));
+
         // TODO
     }
 
- 
-
     @FXML
-    private void altaTaller(ActionEvent event) { 
+    private void altaTaller(ActionEvent event) {
         Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/altaTaller.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);          
-           
-          
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
-        
-        
-       
-    }     
+
+    }
 
     @FXML
     private void consultarGrupo(ActionEvent event) {
-        
-         
+
     }
 
     @FXML
     private void inicio(ActionEvent event) {
+        Parent pare = null;
+        try {
+            pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/inicio.fxml"));
+            verticalBox.getChildren().remove(0);
+            verticalBox.getChildren().remove(0);
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+        verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void talleres(ActionEvent event) {
+        Parent pare = null;
+        try {
+            pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/inicio.fxml"));
+            verticalBox.getChildren().remove(0);
+            verticalBox.getChildren().remove(0);
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+        verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void docente(ActionEvent event) {
-         Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/docentes.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);          
-           
-          
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
-        
+
     }
 
     @FXML
     private void espacio(ActionEvent event) {
-         Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/consultarEspacios.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);          
-           
-          
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
-        
+
     }
 
     @FXML
@@ -168,32 +181,30 @@ public class inicioController implements Initializable {
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/alumnos.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void sesion(ActionEvent event) {
-        
         Parent parent1 = null;
-                try {
-                    parent1 = FXMLLoader.load(getClass().getResource("/com/sotda/vista/FXMLDocument.fxml"));
-                    verticalBox.getChildren().remove(0);
-                    verticalBox.getChildren().remove(0);
+        try {
+            parent1 = FXMLLoader.load(getClass().getResource("/com/sotda/vista/FXMLDocument.fxml"));
+            verticalBox.getChildren().remove(0);
+            verticalBox.getChildren().remove(0);
 
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IndexOutOfBoundsException e) {
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException e) {
 
-                }
-                verticalBox.getChildren().add(0, parent1);
+        }
+        verticalBox.getChildren().add(0, parent1);
     }
 
     @FXML
@@ -206,18 +217,15 @@ public class inicioController implements Initializable {
 
     @FXML
     private void periodos(ActionEvent event) {
-         Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/periodos.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);          
-           
-          
-           
+            verticalBox.getChildren().remove(0);
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
     }

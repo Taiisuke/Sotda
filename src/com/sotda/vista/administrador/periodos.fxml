@@ -61,8 +61,8 @@
                                        <font>
                                           <Font name="Berlin Sans FB" size="12.0" />
                                        </font></Label>
-                                    <DatePicker fx:id="dpInicio" onAction="#inicio" GridPane.columnIndex="1" />
-                                    <DatePicker fx:id="dpfin" onAction="#fin" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <DatePicker fx:id="dpInicio" promptText="Fecha de Inicio" GridPane.columnIndex="1" />
+                                    <DatePicker fx:id="dpfin" promptText="Fecha de Liberación" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                               <Label text="Fin de período" textFill="WHITE">
@@ -79,29 +79,30 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Inscripción" textFill="WHITE">
+                        <RadioButton fx:id="radioInscrip" mnemonicParsing="false" text="Inscripción" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Liberación" textFill="WHITE">
+                        <RadioButton fx:id="radioLib" mnemonicParsing="false" text="Liberación" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="12.0" />
                            </font>
                         </RadioButton>
                      </children>
                   </HBox>
-                  <Label prefHeight="30.0" prefWidth="103.0" text="Consultar Espacios" textFill="WHITE">
+                  <Label prefHeight="30.0" prefWidth="103.0" text="Consultar Periodos" textFill="WHITE">
                      <font>
                         <Font name="Berlin Sans FB" size="13.0" />
                      </font>
                   </Label>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0">
                      <content>
-                        <TableView fx:id="tablaEspacio" prefHeight="275.0" prefWidth="454.0">
+                        <TableView fx:id="tablaPeriodo" prefHeight="275.0" prefWidth="454.0">
                            <columns>
-                              <TableColumn fx:id="colNombreEspacio" prefWidth="251.0" text=" Nombre del Espacio" />
-                              <TableColumn fx:id="colEstado" minWidth="0.0" prefWidth="215.0" text="Estado" />
+                              <TableColumn fx:id="colInicio" minWidth="7.0" prefWidth="215.0" text="Inicio Periodo" />
+                              <TableColumn fx:id="colFin" minWidth="0.0" prefWidth="251.0" text="Fin Periodo" />
+                              <TableColumn fx:id="colTipo" prefWidth="75.0" text="Tipo" />
                            </columns>
                         </TableView>
                      </content>
@@ -131,7 +132,7 @@
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificar" prefHeight="22.0" prefWidth="92.0" style="-fx-background-color: linear-gradient(#DB4E1B, #ffd65b),        linear-gradient(#f2ba44, #ffef84)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#EEAC0A 0%, #DB6310 50%, #DB4E1B 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Modificar" textFill="WHITE">
+                  <Button fx:id="btnModificarEsp" mnemonicParsing="false" onAction="#modificar" prefHeight="22.0" prefWidth="92.0" style="-fx-background-color: linear-gradient(#DB4E1B, #ffd65b),        linear-gradient(#f2ba44, #ffef84)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#EEAC0A 0%, #DB6310 50%, #DB4E1B 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Modificar" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="190.0" />
                      </VBox.margin>
@@ -139,7 +140,7 @@
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" style="-fx-background-color: linear-gradient(#cc0000, #ef4a4a),        linear-gradient(#ef4a4a, #f02e2e)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#f02e2e 0%, #f31616 50%, #cc0000 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-border-image-insets: 0,1,2,3,0;" text="Eliminar" textFill="WHITE">
+                  <Button fx:id="btnEliminarEsp" mnemonicParsing="false" onAction="#eliminar" style="-fx-background-color: linear-gradient(#cc0000, #ef4a4a),        linear-gradient(#ef4a4a, #f02e2e)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#f02e2e 0%, #f31616 50%, #cc0000 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-border-image-insets: 0,1,2,3,0;" text="Eliminar" textFill="WHITE">
                      <font>
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>

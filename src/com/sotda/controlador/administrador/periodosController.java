@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package com.sotda.controlador.administrador;
+
 import com.sotda.controlador.principal.FXMLDocumentController;
+import com.sotda.modelo.periodo.BeanPeriodo;
+import com.sotda.modelo.periodo.DaoPeriodo;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,10 +18,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -52,132 +57,191 @@ public class periodosController implements Initializable {
     @FXML
     private DatePicker dpfin;
     @FXML
-    private TableView<?> tablaEspacio;
-    @FXML
-    private TableColumn<?, ?> colNombreEspacio;
-    @FXML
-    private TableColumn<?, ?> colEstado;
-    @FXML
     private Button btnRegistrar;
     @FXML
     private Button btnCancelar;
     @FXML
-    private Button btnModificar;
+    private RadioButton radioInscrip;
     @FXML
-    private Button btnEliminar;
-
+    private RadioButton radioLib;
+    @FXML
+    private Button btnModificarEsp;
+    @FXML
+    private Button btnEliminarEsp;
+    ToggleGroup tipoPeriodo = new ToggleGroup();
+    Alert alert = null;
+    @FXML
+    private TableColumn<BeanPeriodo, String> colInicio;
+    @FXML
+    private TableColumn<BeanPeriodo, String> colFin;
+    @FXML
+    private TableColumn<BeanPeriodo, String> colTipo;
+    @FXML
+    private TableView<BeanPeriodo> tablaPeriodo;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btnRegistrar.setGraphic(new ImageView("/com/sotda/imagenes/aceptar.png"));
-        btnEliminar.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
+        btnEliminarEsp.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnCancelar.setGraphic(new ImageView("/com/sotda/imagenes/cancelar.png"));
-        btnModificar.setGraphic(new ImageView("/com/sotda/imagenes/modificar.png"));
+        btnModificarEsp.setGraphic(new ImageView("/com/sotda/imagenes/modificar.png"));
+        
+        btnModificarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
+        btnEliminarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
+        
+        btnRegistrar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()));
+        btnCancelar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()));
+        
+        radioInscrip.setToggleGroup(tipoPeriodo);
+        radioLib.setToggleGroup(tipoPeriodo);
+        
+        
+        colInicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
+        colFin.setCellValueFactory(new PropertyValueFactory<>("fechaFinal"));
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipoPeriodo"));
+        pintarTablaPeriodos();
     }
 
+    public void pintarTablaPeriodos(){
+        DaoPeriodo daoPeriodo = new DaoPeriodo();
+        tablaPeriodo.getItems().clear();
+        tablaPeriodo.getItems().addAll(daoPeriodo.consultarPeriodos());
+    }
+    
     @FXML
     private void inicio(ActionEvent event) {
-          Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/inicio.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
-    
+
     }
 
     @FXML
     private void periodos(ActionEvent event) {
+        Parent pare = null;
+        try {
+            pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/periodos.fxml"));
+            verticalBox.getChildren().remove(0);
+            verticalBox.getChildren().remove(0);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+        verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void talleres(ActionEvent event) {
-          Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/inicio.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void docente(ActionEvent event) {
-          Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/docentes.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
     }
 
     @FXML
     private void espacio(ActionEvent event) {
-             Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/consultarEspacios.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
-        
+
     }
 
     @FXML
     private void alumno(ActionEvent event) {
-           Parent pare = null;
+        Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/alumnos.fxml"));
             verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);       
-                  
-           
+            verticalBox.getChildren().remove(0);
+
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IndexOutOfBoundsException e){
-            
+        } catch (IndexOutOfBoundsException e) {
+
         }
         verticalBox.getChildren().add(0, pare);
     }
 
-    @FXML
-    private void fin(ActionEvent event) {
-    }
 
     @FXML
     private void registrar(ActionEvent event) {
+        DaoPeriodo daoPeriodo = new DaoPeriodo();
+        RadioButton eleccion = (RadioButton) tipoPeriodo.getSelectedToggle();
+        String tipo = eleccion.getText();
+        System.out.println(tipo);
+        int tipoPeriodo2;
+        if (tipo.equals("Inscripción")) {
+            tipoPeriodo2 = 1;
+        }else{
+            tipoPeriodo2 = 2;
+        }
+        BeanPeriodo beanPeriodo = new BeanPeriodo(dpInicio.getValue().toString(), dpfin.getValue().toString(),Integer.toString(tipoPeriodo2));
+        if (daoPeriodo.registrarPeriodo(beanPeriodo)) {
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Éxito");
+            alert.setContentText("Se han guardado los datos correctamente.");
+            alert.show();
+            cancelar(event);
+            pintarTablaPeriodos();
+        }else{
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Ocurrió un error.");
+            alert.show();
+        }
     }
 
     @FXML
     private void cancelar(ActionEvent event) {
+        dpInicio.setValue(null);
+        dpfin.setValue(null);
+        radioInscrip.setSelected(false);
+        radioLib.setSelected(false);
     }
 
     @FXML
@@ -188,8 +252,5 @@ public class periodosController implements Initializable {
     private void eliminar(ActionEvent event) {
     }
 
-    @FXML
-    private void sesion(ActionEvent event) {
-    }
 
 }

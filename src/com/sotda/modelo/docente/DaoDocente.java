@@ -56,13 +56,13 @@ public class DaoDocente {
         BeanConsultarDocentes docente = null;
         try {
             con = ConexionSQL.getConnectionSQL();
-            ps = con.prepareStatement("select docente.NOMBRE,PRIMER_APELLIDO,SEGUNDO_APELLIDO, NOMBRETALLER, NOMBRE_ESPACIO, TALLER.ESTADO as estadoTaller"
+            ps = con.prepareStatement("select NOMBREDOC,PRIMER_APELLIDODOC,SEGUNDO_APELLIDODOC, NOMBRETALLER, NOMBRE_ESPACIO, TALLER.ESTADO as estadoTaller"
                     + "	FROM DOCENTE inner join TALLER on NUM_EMPLEADO = TALLER.DOCENTE"
                     + "		inner join ESPACIO on ESPACIO_ID = TALLER.ESPACIO_ASIGNADO");
             rs = ps.executeQuery();
             while (rs.next()) {
                 docente = new BeanConsultarDocentes();
-                docente.setNombre(rs.getString("NOMBRE")+ " " + rs.getString("PRIMER_APELLIDO")+" "+rs.getString("SEGUNDO_APELLIDO"));
+                docente.setNombre(rs.getString("NOMBREDOC")+ " " + rs.getString("PRIMER_APELLIDODOC")+" "+rs.getString("SEGUNDO_APELLIDODOC"));
                 docente.setTaller(rs.getString("NOMBRETALLER"));
                 docente.setEspacio(rs.getString("NOMBRE_ESPACIO"));
                 docente.setEstado(rs.getString("estadoTaller"));
