@@ -10,7 +10,7 @@ package com.sotda.modelo.usuario;
  * @author tadeo
  */
 public class BeanUsuario {
-   public int tipo,id;
+    public int tipo,id;
     public String usuario,contra;
     public String usuario_id;
     public int estado;

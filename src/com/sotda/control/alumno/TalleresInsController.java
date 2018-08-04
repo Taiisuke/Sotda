@@ -6,8 +6,11 @@
 package com.sotda.control.alumno;
 
 import com.sotda.controlador.principal.FXMLDocumentController;
+import com.sotda.modelo.alumno.BeanTalleresInscritos;
+import com.sotda.modelo.alumno.DaoAlumno;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +20,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
@@ -39,6 +45,18 @@ public class TalleresInsController implements Initializable {
     private Button btnTalleres;
     @FXML
     private Button btnDescargar;
+    @FXML
+    private TableView<BeanTalleresInscritos> tableTaller;
+    @FXML
+    private TableColumn<BeanTalleresInscritos, String> nombreTaller;
+    @FXML
+    private TableColumn<BeanTalleresInscritos, String> grupoTaller;
+    @FXML
+    private TableColumn<BeanTalleresInscritos, String> docenteTaller;
+    @FXML
+    private TableColumn<BeanTalleresInscritos, String> horarioTaller;
+    @FXML
+    private TableColumn<BeanTalleresInscritos, String> estadoGrupo;
 
     /**
      * Initializes the controller class.
@@ -46,8 +64,19 @@ public class TalleresInsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        btnDescargar.setGraphic(new ImageView("/com/sotda/imagenes/download.png"));
+       nombreTaller.setCellValueFactory(new PropertyValueFactory<>("nombreTaller"));
+        grupoTaller.setCellValueFactory(new PropertyValueFactory<>("grupo"));
+        docenteTaller.setCellValueFactory(new PropertyValueFactory<>("docente"));
+        horarioTaller.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        estadoGrupo.setCellValueFactory(new PropertyValueFactory<>("estado"));
+        pintarTabla();
     }    
-
+    public void pintarTabla(){
+        DaoAlumno daoAlumno = new DaoAlumno();
+        List<BeanTalleresInscritos> listaPintar = daoAlumno.consultarTallerIncrito();
+        tableTaller.getItems().clear();
+        tableTaller.getItems().addAll(listaPintar);
+    }
 
     @FXML
     private void inicio(ActionEvent event) {

@@ -78,7 +78,7 @@ public class ControladorRegistro implements Initializable {
         registro.setGraphic(new ImageView("/com/sotda/imagenes/aceptar.png"));
         txtCarrera.setPromptText("Selecciona...");
         DaoCarrera daoCarrera = new DaoCarrera(); 
-        ObservableList<BeanCarrera> lista = daoCarrera.consultarDocentes();
+        ObservableList<BeanCarrera> lista = daoCarrera.consultarCarreras();
         for (int i = 0; i < lista.size(); i++) {
             txtCarrera.getItems().add(lista.get(i).getNombreCarrera());
         }

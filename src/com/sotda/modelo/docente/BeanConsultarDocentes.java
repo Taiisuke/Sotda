@@ -10,6 +10,7 @@ package com.sotda.modelo.docente;
  * @author Esmeralda
  */
 public class BeanConsultarDocentes {
+
     private String nombre;
     private String taller;
     private String espacio;
@@ -24,8 +25,6 @@ public class BeanConsultarDocentes {
 
     BeanConsultarDocentes() {
     }
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -58,7 +57,5 @@ public class BeanConsultarDocentes {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
-    
+
 }

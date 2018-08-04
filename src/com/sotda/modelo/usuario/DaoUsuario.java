@@ -12,10 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -70,10 +66,10 @@ public class DaoUsuario {
                 resultado = true;
                 user.setId(rs.getInt("ID"));
                 user.setUsuario(rs.getString("USUARIO"));
-                user.setEstado(rs.getInt("ESTADO"));
+                user.setContra(rs.getString("CONTRA"));
                 user.setUsuario_id(rs.getString("USUARIO_ID"));
                 user.setTipo(rs.getInt("TIPO"));
-                System.out.println(rs.getString("USUARIO_ID"));
+                user.setEstado(rs.getInt("ESTADO"));
             }
         } catch (Exception e) {
             System.out.println("Error validarUsuario() - Ingreso " + e);

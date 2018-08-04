@@ -24,7 +24,7 @@ public class DaoCarrera {
     PreparedStatement ps;
     ResultSet rs;
     
-    public ObservableList<BeanCarrera> consultarDocentes() {
+    public ObservableList<BeanCarrera> consultarCarreras() {
         ObservableList<BeanCarrera> carreras = FXCollections.observableArrayList();
         BeanCarrera carrera = null;
         try {

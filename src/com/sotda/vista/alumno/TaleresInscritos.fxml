@@ -72,13 +72,13 @@
                         <RowConstraints maxHeight="386.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <TableView prefHeight="100.0" prefWidth="491.0" GridPane.rowIndex="1">
+                        <TableView fx:id="tableTaller" prefHeight="100.0" prefWidth="491.0" GridPane.rowIndex="1">
                            <columns>
-                              <TableColumn prefWidth="164.0" text="Nombre del taller" />
-                              <TableColumn prefWidth="79.0" text="Grupo" />
-                              <TableColumn prefWidth="85.0" text="Docente" />
-                              <TableColumn prefWidth="87.0" text="Horario" />
-                              <TableColumn prefWidth="75.0" text="Estado" />
+                              <TableColumn fx:id="nombreTaller" prefWidth="164.0" text="Nombre del taller" />
+                              <TableColumn fx:id="grupoTaller" prefWidth="79.0" text="Grupo" />
+                              <TableColumn fx:id="docenteTaller" prefWidth="85.0" text="Docente" />
+                              <TableColumn fx:id="horarioTaller" prefWidth="87.0" text="Horario" />
+                              <TableColumn fx:id="estadoGrupo" prefWidth="75.0" text="Estado" />
                            </columns>
                         </TableView>
                         <Label text="Talleres Cursados" textFill="WHITE">

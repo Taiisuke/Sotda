@@ -65,7 +65,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Nombre" textFill="WHITE">
+                  <Label text="Nombre(s)" textFill="WHITE">
                      <font>
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>
@@ -106,12 +106,12 @@
                   <TextField fx:id="txtMatricula" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtGrupo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField fx:id="txtCuatrimestre" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label text="Apellido Paterno" textFill="WHITE" GridPane.rowIndex="1">
+                  <Label text="Primer Apellido" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="Apellido Materno" textFill="WHITE" GridPane.rowIndex="2">
+                  <Label text="Segundo Apellido" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font name="Berlin Sans FB" size="12.0" />
                      </font>
@@ -120,6 +120,9 @@
                   <TextField fx:id="txtap2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ComboBox fx:id="txtCarrera" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </GridPane>
          </children>
       </HBox>

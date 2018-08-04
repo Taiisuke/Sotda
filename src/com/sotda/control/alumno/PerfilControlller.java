@@ -158,6 +158,72 @@ public class PerfilControlller implements Initializable {
         BeanAlumno bean = DaoAlumno.consultarAlumno();
         System.out.println(bean.getNombreAlumno());
         nombUsuer.setText(bean.getNombreAlumno());
+        txtMatricula.setText(bean.getMatricula());
+        txtNombre.setText(bean.getNombreAlumno());
+        txtCuatrimestre.setText(Integer.toString(bean.getCuatrimestre()));
+        txtGrupo.setText(bean.getGrupo());
+        txtContra.setText(FXMLDocumentController.user.getContra());
+        switch (bean.getCarrera()) {
+            case 1:
+                txtCarrera.setText("Procesos industriales área: Manufactura");
+                break;
+            case 2:
+                txtCarrera.setText("Tecnologías de la información y comunicación área: Redes y telecomunicaciones");
+                break;
+            case 3:
+                txtCarrera.setText("Tecnologías de la información y comunicación área: Sistemas informáticos");
+                break;
+            case 4:
+                txtCarrera.setText("Terapia Física área: Rehabilitación");
+                break;
+            case 5:
+                txtCarrera.setText("Terapia física área: Turismo de salud y bienestar");
+                break;
+            case 6:
+                txtCarrera.setText("Diseño Digital");
+                break;
+            case 7:
+                txtCarrera.setText("Administración área: Capital Humano");
+                break;
+            case 8:
+                txtCarrera.setText("Diseño y moda industrial área: Producción");
+                break;
+            case 9:
+                txtCarrera.setText("Mantenimiento área: Industrial");
+                break;
+            case 10:
+                txtCarrera.setText("Mecatrónica área: Automatización");
+                break;
+            case 11:
+                txtCarrera.setText("Desarrollo de negocios área: Mercadotecnia");
+                break;
+            case 12:
+                txtCarrera.setText("Nanotecnología área: Materiales");
+                break;
+            case 13:
+                txtCarrera.setText("Tecnologías de la información");
+                break;
+            case 14:
+                txtCarrera.setText("Ingeniería industrial");
+                break;
+            case 15:
+                txtCarrera.setText("Mecatrónica");
+                break;
+            case 16:
+                txtCarrera.setText("Nanotecnología");
+                break;
+            case 17:
+                txtCarrera.setText("Negocios y gestión empresarial");
+                break;
+            case 18:
+                txtCarrera.setText("Diseño textil y moda");
+                break;
+            case 19:
+                txtCarrera.setText("Mantenimiento industrial");
+                break;
+            default:
+                break;
+        }
     }
 
     @FXML
