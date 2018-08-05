@@ -8,6 +8,10 @@ package com.sotda.controlador.administrador;
 import com.sotda.controlador.principal.FXMLDocumentController;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.FormatStyle;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,10 +21,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.util.StringConverter;
+import javafx.util.converter.LocalTimeStringConverter;
 
 /**
  * FXML Controller class
@@ -73,7 +81,7 @@ public class inicioController implements Initializable {
     private Button btnPeriodos;
     @FXML
     private Button btnSesion;
-
+    
     /**
      * Initializes the controller class.
      */
@@ -83,7 +91,6 @@ public class inicioController implements Initializable {
         btnEliminar.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnConsultarGrupo.setGraphic(new ImageView("/com/sotda/imagenes/consultar.png"));
         btnAltaTaller.setGraphic(new ImageView("/com/sotda/imagenes/crear.png"));
-
         // TODO
     }
 
