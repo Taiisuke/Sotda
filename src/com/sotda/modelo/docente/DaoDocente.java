@@ -56,12 +56,14 @@ public class DaoDocente {
         BeanConsultarDocentes docente = null;
         try {
             con = ConexionSQL.getConnectionSQL();
-            ps = con.prepareStatement("select NOMBREDOC,PRIMER_APELLIDODOC,SEGUNDO_APELLIDODOC, NOMBRETALLER, NOMBRE_ESPACIO, TALLER.ESTADO as estadoTaller"
+            ps = con.prepareStatement("select NUM_EMPLEADO,NOMBREDOC,PRIMER_APELLIDODOC,SEGUNDO_APELLIDODOC, NOMBRETALLER, NOMBRE_ESPACIO, TALLER.ESTADO as estadoTaller"
                     + "	FROM DOCENTE inner join TALLER on NUM_EMPLEADO = TALLER.DOCENTE"
-                    + "		inner join ESPACIO on ESPACIO_ID = TALLER.ESPACIO_ASIGNADO");
+                    + "		inner join ESPACIO on ESPACIO_ID = TALLER.ESPACIO_ASIGNADO inner join ESPACIO on ESPACIO_ID = TALLER.ESPACIO_ASIGNADO" +
+"				inner join USUARIO on USUARIO_ID = NUM_EMPLEADO where USUARIO.ESTADO = 1");
             rs = ps.executeQuery();
             while (rs.next()) {
                 docente = new BeanConsultarDocentes();
+                docente.setIdDocente(rs.getInt("NUM_EMPLEADO"));
                 docente.setNombre(rs.getString("NOMBREDOC")+ " " + rs.getString("PRIMER_APELLIDODOC")+" "+rs.getString("SEGUNDO_APELLIDODOC"));
                 docente.setTaller(rs.getString("NOMBRETALLER"));
                 docente.setEspacio(rs.getString("NOMBRE_ESPACIO"));
@@ -76,10 +78,45 @@ public class DaoDocente {
                 ps.close();
                 rs.close();
             } catch (SQLException exe) {
-
+                exe.getMessage();
             }
         }
         return docentes;
     }
 
+    public boolean modificarDocente(BeanDocente beanDocente){
+        boolean resultado = false;
+        
+        return resultado;
+    }
+    
+    public BeanDocente consultarUnDocente(int numeroEmpleado){
+        BeanDocente docente = null;
+        try {
+            con = ConexionSQL.getConnectionSQL();
+            ps = con.prepareStatement("select * from DOCENTE where NUM_EMPLEADO = ?");
+            ps.setString(1,Integer.toString(numeroEmpleado));
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                docente = new BeanDocente();
+                docente.setId(rs.getInt("NUM_EMPLEADO"));
+                docente.setNombre(rs.getString("NOMBREDOC"));
+                docente.setPrimer_apellido(rs.getString("PRIMER_APELLIDODOC"));
+                docente.setPrimer_apellido(rs.getString("PRIMER_APELLIDODOC"));
+                docente.setHabilidades_tecnicas(rs.getString("HABILIDADES_TECNICAS"));
+                docente.setCorreo(rs.getString("CORREO"));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                con.close();
+                ps.close();
+                rs.close();
+            } catch (SQLException exe) {
+                exe.getMessage();
+            }
+        }
+        return docente;
+    }
 }

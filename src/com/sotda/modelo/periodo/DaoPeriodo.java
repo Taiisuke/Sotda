@@ -76,4 +76,49 @@ public class DaoPeriodo {
         }
         return listaPeriodos;
     }
+    
+    public boolean eliminarPeriodo(BeanPeriodo beanPeriodo){
+        boolean resultado = false;
+        try {
+            con = ConexionSQL.getConnectionSQL();
+            pstm = con.prepareStatement("delete PERIODO where FechaInicio = ? and FechaFinal = ?");
+            pstm.setString(1, beanPeriodo.getFechaInicio());
+            pstm.setString(2, beanPeriodo.getFechaFinal());
+            resultado = pstm.executeUpdate() > 0;
+        } catch (Exception e) {
+            System.out.println("Error eliminarPeriodo() - Ingreso " + e);
+        } finally {
+            try {
+                con.close();
+                pstm.close();
+            } catch (SQLException ex) {
+                System.out.println("Error DaoUsuario- eliminarPeriodo() - cerrar" + ex);
+            }
+        }
+        return resultado;
+    }
+
+    public boolean modificarPeriodo(BeanPeriodo beanNuevo, String dateInicio, String dateFinal) {
+        boolean resultado = false;
+            try {
+            con = ConexionSQL.getConnectionSQL();
+            pstm = con.prepareStatement("update PERIODO set FechaInicio = ?, FechaFinal = ?, TIPOP = ? where FechaInicio = ? and FechaFinal = ?");
+            pstm.setString(1, beanNuevo.getFechaInicio());
+            pstm.setString(2, beanNuevo.getFechaFinal());
+            pstm.setString(3, beanNuevo.getTipoPeriodo());
+            pstm.setString(4, dateInicio);
+            pstm.setString(5, dateFinal);
+            resultado = pstm.executeUpdate() > 0;
+        } catch (Exception e) {
+            System.out.println("Error modificarPeriodo() - Ingreso " + e);
+        } finally {
+            try {
+                con.close();
+                pstm.close();
+            } catch (SQLException ex) {
+                System.out.println("Error DaoUsuario- modificarPeriodo() - cerrar" + ex);
+            }
+        }
+        return resultado;
+    }
 }

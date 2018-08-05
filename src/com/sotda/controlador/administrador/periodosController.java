@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -28,6 +29,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -78,6 +81,7 @@ public class periodosController implements Initializable {
     private TableColumn<BeanPeriodo, String> colTipo;
     @FXML
     private TableView<BeanPeriodo> tablaPeriodo;
+
     /**
      * Initializes the controller class.
      */
@@ -87,29 +91,23 @@ public class periodosController implements Initializable {
         btnEliminarEsp.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnCancelar.setGraphic(new ImageView("/com/sotda/imagenes/cancelar.png"));
         btnModificarEsp.setGraphic(new ImageView("/com/sotda/imagenes/modificar.png"));
-        
-        btnModificarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
-        btnEliminarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
-        
-        btnRegistrar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()));
-        btnCancelar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()));
-        
         radioInscrip.setToggleGroup(tipoPeriodo);
         radioLib.setToggleGroup(tipoPeriodo);
         
-        
+        btnModificarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
+        btnEliminarEsp.disableProperty().bind(tablaPeriodo.getSelectionModel().selectedItemProperty().isNull());
+
+        btnRegistrar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()).or(
+        tipoPeriodo.selectedToggleProperty().isNull()));
+        btnCancelar.disableProperty().bind(dpInicio.valueProperty().isNull().or(dpfin.valueProperty().isNull()).or(
+        tipoPeriodo.selectedToggleProperty().isNull()));
+
         colInicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
         colFin.setCellValueFactory(new PropertyValueFactory<>("fechaFinal"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipoPeriodo"));
         pintarTablaPeriodos();
     }
 
-    public void pintarTablaPeriodos(){
-        DaoPeriodo daoPeriodo = new DaoPeriodo();
-        tablaPeriodo.getItems().clear();
-        tablaPeriodo.getItems().addAll(daoPeriodo.consultarPeriodos());
-    }
-    
     @FXML
     private void inicio(ActionEvent event) {
         Parent pare = null;
@@ -207,32 +205,38 @@ public class periodosController implements Initializable {
         verticalBox.getChildren().add(0, pare);
     }
 
-
     @FXML
     private void registrar(ActionEvent event) {
-        DaoPeriodo daoPeriodo = new DaoPeriodo();
-        RadioButton eleccion = (RadioButton) tipoPeriodo.getSelectedToggle();
-        String tipo = eleccion.getText();
-        System.out.println(tipo);
-        int tipoPeriodo2;
-        if (tipo.equals("Inscripción")) {
-            tipoPeriodo2 = 1;
-        }else{
-            tipoPeriodo2 = 2;
-        }
-        BeanPeriodo beanPeriodo = new BeanPeriodo(dpInicio.getValue().toString(), dpfin.getValue().toString(),Integer.toString(tipoPeriodo2));
-        if (daoPeriodo.registrarPeriodo(beanPeriodo)) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Éxito");
-            alert.setContentText("Se han guardado los datos correctamente.");
+        if (dpInicio.getValue().isAfter(dpfin.getValue())) {
+            alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error al elegir la fecha");
+            alert.setContentText("La fecha inicial no puede ser mayor a la fecha final");
             alert.show();
-            cancelar(event);
-            pintarTablaPeriodos();
-        }else{
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("Ocurrió un error.");
-            alert.show();
+        } else {
+
+            DaoPeriodo daoPeriodo = new DaoPeriodo();
+            RadioButton eleccion = (RadioButton) tipoPeriodo.getSelectedToggle();
+            String tipo = eleccion.getText();
+            int tipoPeriodo2;
+            if (tipo.equals("Inscripción")) {
+                tipoPeriodo2 = 1;
+            } else {
+                tipoPeriodo2 = 2;
+            }
+            BeanPeriodo beanPeriodo = new BeanPeriodo(dpInicio.getValue().toString(), dpfin.getValue().toString(), Integer.toString(tipoPeriodo2));
+            if (daoPeriodo.registrarPeriodo(beanPeriodo)) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Éxito");
+                alert.setContentText("Se han guardado los datos correctamente.");
+                alert.show();
+                cancelar(event);
+                pintarTablaPeriodos();
+            } else {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Ocurrió un error.");
+                alert.show();
+            }
         }
     }
 
@@ -246,11 +250,49 @@ public class periodosController implements Initializable {
 
     @FXML
     private void modificar(ActionEvent event) {
+        BeanPeriodo beanPeriodo2 = tablaPeriodo.getSelectionModel().getSelectedItem();
+        modificarPeriodosController obj = null;
+        Stage stage = new Stage();
+
+        try {
+            FXMLLoader cargador = new FXMLLoader(getClass().getResource("/com/sotda/vista/administrador/modificarPeriodo.fxml"));
+            Parent parent = cargador.load();
+            obj = cargador.getController();
+            obj.setPeriodo(beanPeriodo2);
+
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            pintarTablaPeriodos();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML
     private void eliminar(ActionEvent event) {
+        BeanPeriodo beanPeriodo2 = tablaPeriodo.getSelectionModel().getSelectedItem();
+        DaoPeriodo daoPeriodo = new DaoPeriodo();
+        if (daoPeriodo.eliminarPeriodo(beanPeriodo2)) {
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Éxito");
+            alert.setContentText("Se han eliminado los datos correctamente.");
+            alert.show();
+            cancelar(event);
+            pintarTablaPeriodos();
+        } else {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Ocurrió un error.");
+            alert.show();
+        }
     }
 
-
+    public void pintarTablaPeriodos() {
+        DaoPeriodo daoPeriodo = new DaoPeriodo();
+        tablaPeriodo.getItems().clear();
+        tablaPeriodo.getItems().addAll(daoPeriodo.consultarPeriodos());
+    }
 }

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="verticalBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #285b8f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sotda.controlador.administrador.modificarPeriodosController">
+   <children>
+      <BorderPane prefHeight="631.0" prefWidth="600.0">
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="400.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Períodos" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font></Label>
+                  <Label text="Modificar periodo" textFill="WHITE">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Berlin Sans FB" size="13.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="154.0" prefWidth="380.0">
+                     <children>
+                        <GridPane prefHeight="142.0" prefWidth="387.0">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="183.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="127.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="70.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <DatePicker fx:id="fechaNuevaFin" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </DatePicker>
+                              <DatePicker fx:id="fechaNuevaInicio" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </DatePicker>
+                              <Label fx:id="fechaAcutalInicio" textFill="#f5f5f5" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="fechaActualFin" textFill="#f5f5f5" GridPane.rowIndex="2" />
+                              <Label text="Periodo Actual" textFill="#f5f5f5" />
+                              <Label text="Nuevo Periodo" textFill="#f2eded" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="380.0" />
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="50.0">
+                     <children>
+                        <RadioButton fx:id="radioInscrip" mnemonicParsing="false" text="Inscripción" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="radioLib" mnemonicParsing="false" text="Liberación" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="91.0" prefWidth="380.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#modificar" prefHeight="22.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(#009475, #00B553),        linear-gradient(#00D160, #009475),        linear-gradient(#00D160, #009461),        linear-gradient(#00d160 0%, #009461 50%, #009475 100%),linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Actualizar" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="22.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(#cc0000, #ef4a4a),        linear-gradient(#ef4a4a, #f02e2e)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#f02e2e 0%, #f31616 50%, #cc0000 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Cancelar" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>

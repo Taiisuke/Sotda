@@ -10,7 +10,7 @@ package com.sotda.modelo.docente;
  * @author Esmeralda
  */
 public class BeanConsultarDocentes {
-
+    private int idDocente;
     private String nombre;
     private String taller;
     private String espacio;
@@ -26,6 +26,15 @@ public class BeanConsultarDocentes {
     BeanConsultarDocentes() {
     }
 
+    public int getIdDocente() {
+        return idDocente;
+    }
+
+    public void setIdDocente(int idDocente) {
+        this.idDocente = idDocente;
+    }
+
+    
     public String getNombre() {
         return nombre;
     }
