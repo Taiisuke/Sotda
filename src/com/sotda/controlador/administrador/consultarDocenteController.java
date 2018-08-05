@@ -7,6 +7,7 @@ package com.sotda.controlador.administrador;
 
 import com.sotda.controlador.principal.FXMLDocumentController;
 import com.sotda.modelo.docente.BeanConsultarDocentes;
+import com.sotda.modelo.docente.BeanDocente;
 import com.sotda.modelo.docente.DaoDocente;
 import java.io.IOException;
 import java.net.URL;
@@ -18,12 +19,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -36,8 +40,6 @@ public class consultarDocenteController implements Initializable {
     private VBox verticalBox;
     @FXML
     private Button btnAltaDocente;
-    @FXML
-    private Button btnConsultarDocente;
     @FXML
     private Button btnInicio;
     @FXML
@@ -74,7 +76,6 @@ public class consultarDocenteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         btnEliminar.setGraphic(new ImageView("/com/sotda/imagenes/eliminar.png"));
         btnAltaDocente.setGraphic(new ImageView("/com/sotda/imagenes/crear.png"));
-        btnConsultarDocente.setGraphic(new ImageView("/com/sotda/imagenes/consultar.png"));
         btnModificar.setGraphic(new ImageView("/com/sotda/imagenes/modificar.png"));
         
         colNombreDocente.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -86,22 +87,6 @@ public class consultarDocenteController implements Initializable {
 
     @FXML
     private void altaDocente(ActionEvent event) {
-        Parent pare = null;
-        try {
-            pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/docentes.fxml"));
-            verticalBox.getChildren().remove(0);
-            verticalBox.getChildren().remove(0);
-
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IndexOutOfBoundsException e) {
-
-        }
-        verticalBox.getChildren().add(0, pare);
-    }
-
-    @FXML
-    private void consultarDocente(ActionEvent event) {
         Parent pare = null;
         try {
             pare = FXMLLoader.load(getClass().getResource("/com/sotda/vista/administrador/docentes.fxml"));
@@ -215,6 +200,26 @@ public class consultarDocenteController implements Initializable {
 
     @FXML
     private void modificar(ActionEvent event) {
+        BeanConsultarDocentes beanDocenteTaller = tablaDocente.getSelectionModel().getSelectedItem();
+        DaoDocente daoDocente = new DaoDocente();
+        BeanDocente beanDocente = daoDocente.consultarUnDocente(beanDocenteTaller.getIdDocente());
+        System.out.println(beanDocente.getNum_empleado());
+        Stage stage = new Stage();
+        ModificarDocenteController modify = null;
+        try {
+            FXMLLoader cargador = new FXMLLoader(getClass().getResource("/com/sotda/vista/administrador/modificarDocente.fxml"));
+            Parent parent = cargador.load();
+            modify = cargador.getController();
+            modify.setDocente(beanDocente);
+
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            consultar();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

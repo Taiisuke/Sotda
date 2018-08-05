@@ -19,8 +19,7 @@ public class BeanDocente extends BeanUsuario{
     private String habilidades_tecnicas;
     private String correo;
 
-    BeanDocente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BeanDocente() {
     }
 
     public String getCorreo() {

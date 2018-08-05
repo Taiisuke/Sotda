@@ -82,7 +82,7 @@
                                                 <Insets left="70.0" />
                                             </padding>
                                         </Label>
-                                        <Label text="Habilidades Técnicas" textFill="WHITE" GridPane.rowIndex="4">
+                                        <Label text="Habilidades técnicas" textFill="WHITE" GridPane.rowIndex="4">
                                             <font>
                                                 <Font name="Berlin Sans FB" size="12.0" />
                                             </font>
@@ -106,10 +106,10 @@
                                                 <Insets left="123.0" />
                                             </padding>
                                         </Label>
-                                        <TextField fx:id="txtnombreDocente" GridPane.columnIndex="1" />
-                                        <TextField fx:id="txtNumeroEmpleado" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                        <TextField fx:id="txtHabilidades" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                        <TextField fx:id="txtCorreo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                        <TextField fx:id="txtnombreDocente" style="-fx-border-color: black;" GridPane.columnIndex="1" />
+                                        <TextField fx:id="txtNumeroEmpleado" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <TextField fx:id="txtHabilidades" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <TextField fx:id="txtCorreo" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                         <Label text="Confirmar Contraseña" textFill="WHITE" GridPane.rowIndex="7">
                                             <font>
                                                 <Font name="Berlin Sans FB" size="12.0" />
@@ -118,7 +118,7 @@
                                                 <Insets left="70.0" />
                                             </padding>
                                         </Label>
-                                        <Label text="Apellido Paterno" textFill="WHITE" GridPane.rowIndex="1">
+                                        <Label text="Primer apellido" textFill="WHITE" GridPane.rowIndex="1">
                                             <font>
                                                 <Font name="Berlin Sans FB" size="12.0" />
                                             </font>
@@ -126,7 +126,7 @@
                                                 <Insets left="95.0" />
                                             </GridPane.margin>
                                         </Label>
-                                        <Label text="Apellido Materno" textFill="WHITE" GridPane.rowIndex="2">
+                                        <Label text="Segundo apellido" textFill="WHITE" GridPane.rowIndex="2">
                                             <font>
                                                 <Font name="Berlin Sans FB" size="12.0" />
                                             </font>
@@ -134,10 +134,10 @@
                                                 <Insets left="94.0" />
                                             </GridPane.margin>
                                         </Label>
-                                        <TextField fx:id="txtape1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                        <TextField fx:id="txtape2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                        <PasswordField fx:id="txtContra" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                        <PasswordField fx:id="txtConfirmarContra" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                        <TextField fx:id="txtape1" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="txtape2" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <PasswordField fx:id="txtContra" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                        <PasswordField fx:id="txtConfirmarContra" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                     </children>
                                 </GridPane>
                             </children>
@@ -193,37 +193,37 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#inicio" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Inicio" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#inicio" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Inicio" textOverrun="WORD_ELLIPSIS" wrapText="true">
                                     <font>
                                         <Font name="Berlin Sans FB" size="13.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnPeriodos" mnemonicParsing="false" onAction="#periodos" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Períodos" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1">
+                                <Button fx:id="btnPeriodos" mnemonicParsing="false" onAction="#periodos" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Períodos" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnTalleres" mnemonicParsing="false" onAction="#talleres" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Talleres" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2">
+                                <Button fx:id="btnTalleres" mnemonicParsing="false" onAction="#talleres" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Talleres" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnDocente" mnemonicParsing="false" onAction="#docente" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Docentes" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3">
+                                <Button fx:id="btnDocente" mnemonicParsing="false" onAction="#docente" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Docentes" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnEspacio" mnemonicParsing="false" onAction="#espacio" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Espacios" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4">
+                                <Button fx:id="btnEspacio" mnemonicParsing="false" onAction="#espacio" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Gestión Espacios" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnAlumno" mnemonicParsing="false" onAction="#alumno" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Consultar Alumnos" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5">
+                                <Button fx:id="btnAlumno" mnemonicParsing="false" onAction="#alumno" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Consultar Alumnos" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnSesion" mnemonicParsing="false" onAction="#sesion" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);; -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Cerrar Sesión" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="7">
+                                <Button fx:id="btnSesion" mnemonicParsing="false" onAction="#sesion" prefHeight="46.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(#686868 0%, #232723  25%, #373837 75%, #757575 100%),        linear-gradient(#dbdbdb,#d7d7d7 ),        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%); -fx-background-insets: 0,1,4,5,6; -fx-background-radius: 9,8,5,4,3; -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);" text="Cerrar Sesión" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="7">
                                     <font>
                                         <Font name="Berlin Sans FB" size="12.0" />
                                     </font>

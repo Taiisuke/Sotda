@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="verticalBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #285b8f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sotda.controlador.administrador.ModificarDocenteController">
+    <children>
+            <Label text="Modificar Docente" textFill="WHITE">
+                <font>
+                    <Font name="Berlin Sans FB" size="15.0" />
+                </font>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+            </Label>
+      <HBox prefHeight="323.0" prefWidth="400.0">
+         <children>
+            <GridPane prefHeight="314.0" prefWidth="390.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="192.0" minWidth="15.0" prefWidth="192.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="287.0" minWidth="15.0" prefWidth="198.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nombre completo" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Primer apellido" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Segundo apellido" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Habilidades técnicas" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Contraseña" textFill="WHITE" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Nueva Contraseña" textFill="WHITE" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Confirmar contraseña" textFill="WHITE" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Numero de empleado" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Correo electrónico" textFill="WHITE" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nombreDocente" style="-fx-border-color: black;" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="ape1Docente" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="ape2Docente" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="numEmpleado" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="contraseniaActual" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="correoActual" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <PasswordField fx:id="nuevaContrasenia" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </PasswordField>
+                  <PasswordField fx:id="confirmarContrasenia" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </PasswordField>
+                  <TextArea fx:id="habilidadesTecnicas" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextArea>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+            <HBox alignment="CENTER" prefHeight="68.0" prefWidth="400.0" spacing="100.0">
+                <children>
+                    <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#modificarDocente" prefHeight="22.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(#009475, #00B553),        linear-gradient(#00D160, #009475),        linear-gradient(#00D160, #009461),        linear-gradient(#00d160 0%, #009461 50%, #009475 100%),linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0)); -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Actualizar" textFill="WHITE" wrapText="true">
+                        <font>
+                            <Font name="Berlin Sans FB" size="12.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(#cc0000, #ef4a4a),        linear-gradient(#ef4a4a, #f02e2e)         linear-gradient(#efaa22, #ffea6a),        linear-gradient(#f02e2e 0%, #f31616 50%, #cc0000 100%),        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));; -fx-background-radius: 5; -fx-background-insets: 0,1,2,3,0;" text="Cancelar" textFill="WHITE" wrapText="true">
+                        <font>
+                            <Font name="Berlin Sans FB" size="12.0" />
+                        </font>
+                    </Button>
+                </children>
+            </HBox>
+    </children>
+</VBox>
